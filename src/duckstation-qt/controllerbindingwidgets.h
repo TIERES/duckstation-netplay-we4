@@ -16,16 +16,12 @@
 #include "ui_controllerbindingwidget_guncon.h"
 #include "ui_controllerbindingwidget_mouse.h"
 #include "ui_controllerbindingwidget_negcon.h"
-#include "ui_controllermacroeditwidget.h"
-#include "ui_controllermacrowidget.h"
 
 class QVBoxLayout;
 
 class InputBindingWidget;
 class ControllerSettingsDialog;
 class ControllerCustomSettingsWidget;
-class ControllerMacroWidget;
-class ControllerMacroEditWidget;
 class ControllerBindingWidget_Base;
 
 //////////////////////////////////////////////////////////////////////////
@@ -51,7 +47,6 @@ private Q_SLOTS:
   void onClearBindingsClicked();
   void onBindingsClicked();
   void onSettingsClicked();
-  void onMacrosClicked();
 
 private:
   void populateControllerTypes();
@@ -70,60 +65,6 @@ private:
 
   ControllerBindingWidget_Base* m_bindings_widget = nullptr;
   ControllerCustomSettingsWidget* m_settings_widget = nullptr;
-  ControllerMacroWidget* m_macros_widget = nullptr;
-};
-
-//////////////////////////////////////////////////////////////////////////
-
-class ControllerMacroWidget : public QWidget
-{
-  Q_OBJECT
-
-public:
-  ControllerMacroWidget(ControllerBindingWidget* parent);
-  ~ControllerMacroWidget();
-
-  void updateListItem(u32 index);
-
-private:
-  static constexpr u32 NUM_MACROS = InputManager::NUM_MACRO_BUTTONS_PER_CONTROLLER;
-
-  void createWidgets(ControllerBindingWidget* parent);
-
-  Ui::ControllerMacroWidget m_ui;
-  ControllerSettingsDialog* m_dialog;
-  std::array<ControllerMacroEditWidget*, NUM_MACROS> m_macros;
-};
-
-//////////////////////////////////////////////////////////////////////////
-
-class ControllerMacroEditWidget : public QWidget
-{
-  Q_OBJECT
-
-public:
-  ControllerMacroEditWidget(ControllerMacroWidget* parent, ControllerBindingWidget* bwidget, u32 index);
-  ~ControllerMacroEditWidget();
-
-  QString getSummary() const;
-
-private Q_SLOTS:
-  void onSetFrequencyClicked();
-  void updateBinds();
-
-private:
-  void modFrequency(s32 delta);
-  void updateFrequency();
-  void updateFrequencyText();
-
-  Ui::ControllerMacroEditWidget m_ui;
-
-  ControllerMacroWidget* m_parent;
-  ControllerBindingWidget* m_bwidget;
-  u32 m_index;
-
-  std::vector<const Controller::ControllerBindingInfo*> m_binds;
-  u32 m_frequency = 0;
 };
 
 //////////////////////////////////////////////////////////////////////////
