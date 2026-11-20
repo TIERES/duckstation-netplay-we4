@@ -198,12 +198,6 @@
     <QtUi Include="controllersettingsdialog.ui">
       <FileType>Document</FileType>
     </QtUi>
-    <QtUi Include="controllermacrowidget.ui">
-      <FileType>Document</FileType>
-    </QtUi>
-    <QtUi Include="controllermacroeditwidget.ui">
-      <FileType>Document</FileType>
-    </QtUi>
     <QtUi Include="emptygamelistwidget.ui">
       <FileType>Document</FileType>
     </QtUi>

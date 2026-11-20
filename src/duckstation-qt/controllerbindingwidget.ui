@@ -77,26 +77,6 @@
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QToolButton" name="macros">
-          <property name="text">
-           <string>Macros</string>
-          </property>
-          <property name="icon">
-           <iconset theme="flashlight-line">
-            <normaloff>.</normaloff>.</iconset>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonTextBesideIcon</enum>
-          </property>
-          <property name="autoRaise">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
        </layout>
       </item>
       <item>
