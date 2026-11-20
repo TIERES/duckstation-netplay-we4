@@ -57,7 +57,7 @@ static constexpr float MAX_CLOSE_TIME = 3.0f;
 static constexpr u32 MAX_CONNECT_RETRIES = 4;
 // TODO: traversal info. maybe should also be in a config
 static constexpr u16 TRAVERSAL_PORT = 37373;
-static constexpr const char* TRAVERSAL_IP = "127.0.0.1";
+static constexpr const char* TRAVERSAL_IP = "heatxd.dev";
 
 static bool NpAdvFrameCb(void* ctx, int flags);
 static bool NpSaveFrameCb(void* ctx, unsigned char** buffer, int* len, int* checksum, int frame);
